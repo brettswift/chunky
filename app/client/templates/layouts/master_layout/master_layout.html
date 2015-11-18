@@ -12,12 +12,20 @@
       </div>
       <div class="collapse navbar-collapse" id="navigationbar">
         <ul class="nav navbar-nav navbar-right">
-          <li>{{#linkTo route="home"}}<i class="fa fa-home"></i>   Home{{/linkTo}}</li>
+          <li>{{#linkTo route="home"}}<i class="fa fa-home"></i>  Home{{/linkTo}}</li>
           {{#if currentUser}}
-            <li>{{#linkTo route="workoutsList"}}<i class="fa fa-align-justify"></i> Workouts{{/linkTo}}</li>
+            <li>{{#linkTo route="workoutsList"}}<i class="fa fa-th-list"></i> Workouts{{/linkTo}}</li>
             <li>{{#linkTo route="insertWorkout"}}<i class="fa fa-plus"></i> New Workout{{/linkTo}}</li>
           {{/if}}
-          <li><div class="nav navbar-nav navbar-right"> {{> loginButtons}}</div></li>
+          <li>
+            <ul class="nav navbar-nav navbar-right">
+                {{#if currentUser}}
+                  <li>{{#linkTo route="editProfile"}}<i class="fa fa-pencil"></i> Edit Profile{{/linkTo}}</li>
+                {{/if}}
+                <!--FIXME: edit profile button doesn't work within dropdown.  -->
+              {{> loginButtons}}
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
@@ -25,6 +33,7 @@
   <br><br><br>
   <div class="container">
     {{> yield}}
+    {{> flashMessages}}
   </div>
   <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">

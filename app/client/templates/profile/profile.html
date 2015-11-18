@@ -1,0 +1,18 @@
+<template name="profile">
+  <div class="container">
+
+  {{#unless currentUser}}
+    <div class="alert alert-warning well-lg">
+      <span class="glyphicon glyphicon-flash" aria-hidden="true"></span>
+      Please log in.
+    </div>
+
+  {{else}}
+    {{> quickForm collection="Meteor.users" doc=user id="user-profile-form" type="update" omitFields="emails,services,createdAt"}}
+  {{/unless}}
+</div>
+</template>
+
+<template name="_loginButtonsAdditionalLoggedInDropdownActions">
+    <button class="btn btn-default btn-block" id="login-buttons-edit-profile">Edit profile</button>
+</template>

@@ -33,6 +33,12 @@ Router.route('/workouts/id', {
   where: 'client'
 });
 
+Router.route('/profile', {
+  name: 'editProfile',
+  controller: 'ProfileController',
+  action: 'edit',
+  where: 'client'
+});
 
 Router.onBeforeAction(function() {
   if (!Meteor.user()) {
@@ -41,4 +47,4 @@ Router.onBeforeAction(function() {
   {
     this.next();
   }
-}, {only: ['workoutsList', 'insertWorkout']});
+}, {only: ['workoutsList', 'insertWorkout','editProfile']});

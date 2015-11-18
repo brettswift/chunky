@@ -1,29 +1,33 @@
 /*****************************************************************************/
-/* InsertWorkout: Event Handlers */
+/* Profile: Event Handlers */
 /*****************************************************************************/
-Template.InsertWorkout.events({
+Template.profile.events({
 });
 
-AutoForm.addHooks(["insertWorkoutForm"], {
+AutoForm.addHooks(["user-profile-form"], {
   onSuccess: function(operation, result, template) {
-    FlashMessages.sendSuccess('Workout Added! Keep on givin er');
+    FlashMessages.sendSuccess('Profile Updated Successfully!');
+    Router.go("/workouts_list");
   }
 });
 
 /*****************************************************************************/
-/* InsertWorkout: Helpers */
+/* Profile: Helpers */
 /*****************************************************************************/
-Template.InsertWorkout.helpers({
+Template.profile.helpers({
+  user: function(){
+    return Meteor.user();
+  }
 });
 
 /*****************************************************************************/
-/* InsertWorkout: Lifecycle Hooks */
+/* Profile: Lifecycle Hooks */
 /*****************************************************************************/
-Template.InsertWorkout.onCreated(function () {
+Template.profile.onCreated(function () {
 });
 
-Template.InsertWorkout.onRendered(function () {
+Template.profile.onRendered(function () {
 });
 
-Template.InsertWorkout.onDestroyed(function () {
+Template.profile.onDestroyed(function () {
 });

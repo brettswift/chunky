@@ -26,3 +26,8 @@ ian:accounts-ui-bootstrap-3
 natestrauser:font-awesome
 accounts-password
 aldeed:simple-schema
+reactive-var
+accounts-google
+accounts-facebook
+msavin:mongol
+mrt:flash-messages
